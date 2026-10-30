@@ -8,12 +8,11 @@ import {
   useParams
 } from "react-router-dom";
 
-
-
 import {
   ArrowUpRight,
   ArrowRight,
   ArrowLeft,
+  ArrowDownToLine,
   Mail,
   Code2,
   Database,
@@ -29,9 +28,6 @@ import {
   ExternalLink,
   Camera
 } from "lucide-react";
-
-
-
 
 import "./App.css";
 
@@ -417,6 +413,8 @@ function PageHeading({ number, label, title, subtitle }) {
 /* HOME PAGE */
 
 function Home() {
+  const [showCVPopup, setShowCVPopup] = useState(false);
+
   return (
     <>
 
@@ -451,17 +449,24 @@ function Home() {
 </p>
 
 
-          <div className="hero-actions">
+<div className="hero-actions">
 
-            <Link to="/projects" className="primary-button">
-              Explore My Work <ArrowUpRight size={17} />
-            </Link>
+  <Link to="/projects" className="primary-button">
+    Explore My Work <ArrowUpRight size={17} />
+  </Link>
 
-            <Link to="/about" className="secondary-button">
-              Discover My Story <ArrowRight size={16} />
-            </Link>
+  <Link to="/about" className="secondary-button">
+    Discover My Story <ArrowRight size={16} />
+  </Link>
 
-          </div>
+  <button
+    className="secondary-button"
+    onClick={() => setShowCVPopup(true)}
+  >
+    Download CV <ArrowDownToLine size={17} />
+  </button>
+
+</div>
 
         </div>
 
@@ -489,6 +494,40 @@ function Home() {
 
         </div>
       </section>
+
+      {showCVPopup && (
+        <div className="cv-modal-overlay">
+          <div className="cv-modal">
+
+            <h2>Download My CV?</h2>
+
+            <p>
+              Would you like to download my latest resume?
+            </p>
+
+            <div className="cv-modal-actions">
+
+              <a
+                href="/resume.pdf"
+                download="Allen_Joseph_CV.pdf"
+                className="cv-confirm-button"
+                onClick={() => setShowCVPopup(false)}
+              >
+                Yes, Download
+              </a>
+
+              <button
+                className="cv-cancel-button"
+                onClick={() => setShowCVPopup(false)}
+              >
+                No, Cancel
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+      )}
 
       <section className="intro-section">
         <div className="page-container intro-content">
