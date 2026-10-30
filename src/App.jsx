@@ -289,6 +289,7 @@ const skills = [
   }
 ];
 
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -296,14 +297,19 @@ function Navbar() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
-    { name: "Skills", path: "/skills" },
+    { name: "Expertise", path: "/skills" },
     { name: "Experience", path: "/experience" },
     { name: "Contact", path: "/contact" }
   ];
 
   return (
-    <header className="navbar">
-      <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
+    <header className="navbar navbar-advanced">
+
+      <Link
+        to="/"
+        className="nav-brand"
+        onClick={() => setMenuOpen(false)}
+      >
         <img src="/logo.png" alt="AJ Logo" />
       </Link>
 
@@ -311,36 +317,53 @@ function Navbar() {
         className="menu-button"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle navigation"
+        aria-expanded={menuOpen}
       >
         {menuOpen ? <X /> : <Menu />}
       </button>
 
       <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-        {links.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            end={item.path === "/"}
-            className={({ isActive }) =>
-              isActive ? "nav-link active" : "nav-link"
-            }
+
+        <div className="nav-main-links">
+          {links.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              end={item.path === "/"}
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.name}
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="nav-actions">
+
+          <span className="nav-availability">
+            <span className="nav-status-dot"></span>
+            AVAILABLE
+          </span>
+
+          <Link
+            to="/contact"
+            className="nav-contact nav-contact-premium"
             onClick={() => setMenuOpen(false)}
           >
-            {item.name}
-          </NavLink>
-        ))}
+            Let's Collaborate
+            <ArrowUpRight size={16} />
+          </Link>
 
-        <Link
-          to="/contact"
-          className="nav-contact"
-          onClick={() => setMenuOpen(false)}
-        >
-          Let's Talk <ArrowUpRight size={15} />
-        </Link>
+        </div>
+
       </nav>
+
     </header>
   );
 }
+
 
 /* FOOTER */
 
@@ -437,15 +460,15 @@ function Home() {
 </h1>
 
 <h2 className="hero-role">
-  Engineering Student. Developer. Innovator.
+  Data Science Student. Software Developer. AI Enthusiast.
 </h2>
 
 <p className="hero-description">
-  I build technology-driven solutions, explore
-  artificial intelligence and transform ideas into
-  practical digital experiences. Currently focused
-  on software development, data science and
-  machine learning.
+  I build practical software applications, develop
+  full-stack solutions and explore artificial
+  intelligence. My work focuses on programming,
+  database systems, data science and turning
+  technical ideas into functional applications.
 </p>
 
 
