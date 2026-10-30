@@ -1,16 +1,94 @@
-# React + Vite
+# 👋 Allen Joseph | Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+### Engineering Student · Developer · Technology Enthusiast
 
-Currently, two official plugins are available:
+Welcome to my personal portfolio repository! This project showcases my technical skills, academic journey, development projects, and interest in building practical technology solutions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+I enjoy exploring new technologies, solving problems, and transforming ideas into functional applications.
 
-## React Compiler
+> "I don't just follow technology. I explore it, challenge it and turn ideas into reality."
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🌐 Portfolio Website
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+**Live Website:** Coming Soon
+
+**GitHub:** [Allen20077](https://github.com/Allen20077)
+
+---
+
+## 👨‍💻 About Me
+
+I'm Allen Joseph, an engineering student specializing in Data Science, with an interest in software development, artificial intelligence, and emerging technologies.
+
+I enjoy working on projects that combine programming, data, and real-world problem-solving. I'm continuously learning and improving my technical skills through hands-on development.
+
+---
+
+## 🛠️ Technical Skills
+
+| Category | Technologies |
+|---|---|
+| Programming | Python, Java, JavaScript |
+| Frontend | HTML, CSS, React |
+| Backend | FastAPI, REST APIs |
+| Database | MySQL, Supabase |
+| Data Science | Data Analysis, Machine Learning |
+| Tools | Git, GitHub, VS Code |
+| 3D & Interactive | Blender, Unity |
+
+---
+
+## 🚀 Featured Projects
+
+### 1. CampusFind AI
+An intelligent campus lost-and-found platform designed to help students report, discover, and match lost items.
+
+**Technologies:** React, Python, FastAPI, Supabase
+
+### 2. Clara AI
+An experimental personal AI assistant exploring voice interaction, conversational AI, and intelligent interfaces.
+
+**Technologies:** Python, React, FastAPI
+
+### 3. Railway Management System
+A railway management application exploring train searches, booking workflows, and database integration.
+
+**Technologies:** React, Python, MySQL
+
+### 4. 3D & AR/VR Development
+An exploration of 3D asset creation and interactive experiences using Blender and Unity.
+
+**Technologies:** Blender, Unity, 3D Design
+
+---
+
+## 🎯 Current Focus
+
+- Improving software development and programming skills.
+- Exploring Artificial Intelligence and Machine Learning.
+- Building practical full-stack applications.
+- Learning data analysis and predictive modelling.
+- Developing projects that solve real-world problems.
+
+---
+
+## 📫 Connect With Me
+
+- **GitHub:** [@Allen20077](https://github.com/Allen20077)
+- **LinkedIn:** Add your LinkedIn profile
+- **Instagram:** Add your Instagram profile
+- **Email:** Add your professional email
+
+---
+
+## 📌 Repository Information
+
+This repository contains the source code for my personal portfolio website.
+
+Feel free to explore the repository and follow my development journey.
+
+---
+
+⭐ **Thanks for visiting my portfolio!**
