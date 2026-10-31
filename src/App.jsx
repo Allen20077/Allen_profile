@@ -26,7 +26,8 @@ import {
   Sparkles,
   MapPin,
   ExternalLink,
-  Camera
+  Camera,
+  Award,
 } from "lucide-react";
 
 import "./App.css";
@@ -297,6 +298,7 @@ function Navbar() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
+    { name: "Certifications", path: "/certifications" },
     { name: "Expertise", path: "/skills" },
     { name: "Experience", path: "/experience" },
     { name: "Contact", path: "/contact" }
@@ -1013,6 +1015,270 @@ function Skills() {
   );
 }
 
+function Certifications() {
+  const certificates = [
+    {
+      name: "Microsoft Azure AI Fundamentals",
+      issuer: "Microsoft / Certiport",
+      category: "Professional Certification",
+      description: "Passed the AI-901 examination with a score of 966 out of 1000, covering AI concepts and Microsoft Foundry solutions.",
+      file: "Score Report - AI-901.pdf",
+      featured: true
+    },
+    {
+      name: "Google Analytics Certification",
+      issuer: "Google",
+      category: "Professional Certification",
+      description: "Certification in Google Analytics, with an emphasis on understanding and analyzing digital performance.",
+      file: "google.pdf"
+    },
+    {
+      name: "Advanced Software Engineering Job Simulation",
+      issuer: "Walmart Global Tech / Forage",
+      category: "Job Simulation",
+      description: "Completed practical tasks involving advanced data structures, software architecture, relational database design and data munging.",
+      file: "wallmart_completion_certificate.pdf"
+    },
+    {
+      name: "Quantitative Research Job Simulation",
+      issuer: "JPMorgan Chase & Co. / Forage",
+      category: "Job Simulation",
+      description: "Worked on price data analysis, commodity storage contract pricing, credit risk analysis and FICO score bucketing.",
+      file: "jp_morgan_completion_certificate.pdf"
+    },
+    {
+      name: "Software Engineering Job Simulation",
+      issuer: "JPMorgan Chase & Co. / Forage",
+      category: "Job Simulation",
+      description: "Completed practical tasks involving project setup, Kafka, H2, REST API integration and REST API controllers.",
+      file: "jpmorgan_completion_certificate.pdf"
+    },
+    {
+      name: "Software Engineering Job Simulation",
+      issuer: "Quantium / Forage",
+      category: "Job Simulation",
+      description: "Worked on a software engineering simulation involving local development setup, data processing, Dash application development and testing.",
+      file: "quantium_completion_certificate.pdf"
+    },
+    {
+      name: "Data Analytics Job Simulation",
+      issuer: "Deloitte / Forage",
+      category: "Job Simulation",
+      description: "Completed practical tasks in data analysis and forensic technology.",
+      file: "deloitte_completion_certificate.pdf"
+    },
+    {
+      name: "Introduction to Data for Decision Makers",
+      issuer: "BCG X / Forage",
+      category: "Job Simulation",
+      description: "Completed practical activities involving campaign performance analysis and communicating findings.",
+      file: "BCGX_completion_certificate.pdf"
+    },
+    {
+      name: "Introduction to Cloud Job Simulation",
+      issuer: "Datacom / Forage",
+      category: "Job Simulation",
+      description: "Completed tasks involving cloud application registration and creating a GitHub Actions workflow.",
+      file: "Datacom_completion_certificate.pdf"
+    },
+    {
+      name: "Software Engineering Job Simulation",
+      issuer: "Wells Fargo / Forage",
+      category: "Job Simulation",
+      description: "Completed practical activities involving data modelling and implementation.",
+      file: "forage_completion_certificate.pdf"
+    },
+    {
+      name: "Python for Data Science",
+      issuer: "Infosys",
+      category: "Technical Course",
+      description: "Course completion focused on Python fundamentals and their application in data science.",
+      file: "Python for Data Science.pdf"
+    },
+    {
+      name: "Computer Fundamentals 101",
+      issuer: "Infosys",
+      category: "Technical Course",
+      description: "Course covering foundational computer concepts and essential computing knowledge.",
+      file: "Computer Fundamentals 101.pdf"
+    },
+    {
+      name: "Fundamentals of Responsible AI",
+      issuer: "Infosys",
+      category: "Artificial Intelligence",
+      description: "Explores responsible AI principles and considerations for developing and using AI systems.",
+      file: "Fundamentals of Responsible AI.pdf"
+    },
+    {
+      name: "Software Engineering and Agile Software Development",
+      issuer: "Infosys",
+      category: "Software Engineering",
+      description: "Course covering software engineering concepts and Agile software development practices.",
+      file: "Software Engineering and Agile software development.pdf"
+    },
+    {
+      name: "ReactJS",
+      issuer: "Infosys",
+      category: "Web Development",
+      description: "Course completion focused on ReactJS and frontend application development.",
+      file: "ReactJS.pdf"
+    },
+    {
+      name: "IoT & Electronics Course",
+      issuer: "Infosys",
+      category: "Internet of Things",
+      description: "Course covering Internet of Things concepts and electronics fundamentals.",
+      file: "IoT & Electronics Course.pdf"
+    },
+    {
+      name: "Raspberry Pi Course",
+      issuer: "Infosys",
+      category: "Hardware & IoT",
+      description: "Course introducing Raspberry Pi and its applications in computing and embedded systems.",
+      file: "Raspberry Pi Course.pdf"
+    },
+    {
+      name: "Robotics Course",
+      issuer: "Infosys",
+      category: "Robotics",
+      description: "Course completion focused on robotics concepts and their practical applications.",
+      file: "Robotics Course.pdf"
+    },
+    {
+      name: "Design Thinking",
+      issuer: "Infosys",
+      category: "Innovation",
+      description: "Course exploring structured problem-solving and user-centred design approaches.",
+      file: "Design Thinking.pdf"
+    },
+    {
+      name: "Getting Started with Microsoft Excel",
+      issuer: "Coursera",
+      category: "Data & Productivity",
+      description: "Completed a guided project introducing Microsoft Excel and spreadsheet-based workflows.",
+      file: "Coursera microsoft excel.pdf"
+    },
+    {
+      name: "Extended Realities: AR and VR",
+      issuer: "Udemy",
+      category: "Emerging Technology",
+      description: "Completed a 6.5-hour course exploring augmented reality and virtual reality concepts.",
+      file: "udemy.pdf"
+    },
+    {
+      name: "Trading in the Zone – Elementary",
+      issuer: "GTF – A Stock Market Institute",
+      category: "Additional Learning",
+      description: "Completed an elementary-level course focused on introductory stock market concepts.",
+      file: "Trading In The Zone - Elementary.pdf"
+    },
+    {
+      name: "Ethical Hacking & Cybersecurity Workshop",
+      issuer: "VaultOfCodes",
+      category: "Technical Workshop",
+      description: "Participated in a cybersecurity workshop covering reconnaissance, network scanning, Wi-Fi security and web vulnerabilities.",
+      file: "Allen Joseph - Participation Certificate.pdf"
+    },
+    {
+      name: "Participation Certificate",
+      issuer: "Verify from original document",
+      category: "Participation",
+      description: "Participation certificate. The specific event and issuing organization should be confirmed from the original document.",
+      file: "ALLEN JOSEPH.pdf"
+    },
+    {
+      name: "Certificate of Completion",
+      issuer: "Verify from original document",
+      category: "Additional Learning",
+      description: "Open the original certificate to confirm its exact course title and issuing organization.",
+      file: "CERTIFICATE.pdf"
+    }
+  ];
+
+  return (
+    <section className="page-container inner-page">
+
+      <PageHeading
+        number="04"
+        label="CREDENTIALS & RECOGNITION"
+        title={
+          <>Certifications & <span>achievements.</span></>
+        }
+        subtitle="Professional certifications, industry job simulations and technical learning experiences."
+      />
+
+      <div className="credential-intro">
+        <Award size={35} />
+
+        <div>
+          <h2>Continuous learning. Practical application.</h2>
+          <p>
+            A collection of professional certifications,
+            industry simulations and technical learning
+            experiences across software engineering,
+            data science and emerging technologies.
+          </p>
+        </div>
+      </div>
+
+      <div className="credential-count">
+        <span>{certificates.length} CREDENTIALS & DOCUMENTS</span>
+        <span>PROFESSIONAL DEVELOPMENT</span>
+      </div>
+
+      <div className="credential-grid">
+
+        {certificates.map((certificate, index) => (
+          <article
+            className={`credential-card ${
+              certificate.featured ? "credential-featured" : ""
+            }`}
+            key={certificate.file}
+          >
+
+            <div className="credential-card-top">
+              <div className="credential-icon">
+                <Award size={25} />
+              </div>
+
+              <span>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
+
+            <span className="credential-category">
+              {certificate.category}
+            </span>
+
+            <h2>{certificate.name}</h2>
+
+            <p>{certificate.description}</p>
+
+            <div className="credential-issuer">
+              {certificate.issuer}
+            </div>
+
+            <a
+              className="credential-view"
+              href={`/certificates/${encodeURIComponent(
+                certificate.file
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Certificate
+              <ArrowUpRight size={16} />
+            </a>
+
+          </article>
+        ))}
+
+      </div>
+
+    </section>
+  );
+}
+
 
 /* EXPERIENCE PAGE */
 
@@ -1248,6 +1514,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/certifications" element={<Certifications />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/experience" element={<Experience />} />
