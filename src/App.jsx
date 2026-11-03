@@ -1192,7 +1192,49 @@ function Certifications() {
       category: "Additional Learning",
       description: "Open the original certificate to confirm its exact course title and issuing organization.",
       file: "CERTIFICATE.pdf"
-    }
+    },
+    
+{
+  name: "Introduction to Data Science Job Simulation",
+  issuer: "Commonwealth Bank / Forage",
+  category: "Job Simulation",
+  description: "Data aggregation, data anonymisation, data analysis approaches and database design.",
+  file: "commonwealth_bank.pdf",
+  date: "November 3, 2026"
+},
+{
+  name: "Cyber Job Simulation",
+  issuer: "Deloitte / Forage",
+  category: "Job Simulation",
+  description: "Completed practical cybersecurity tasks.",
+  file: "Cyber.pdf",
+  date: "November 3, 2026"
+},
+{
+  name: "Data Science Job Simulation",
+  issuer: "British Airways / Forage",
+  category: "Job Simulation",
+  description: "Lounge eligibility modelling and predicting customer buying behaviour.",
+  file: "Data Science.pdf",
+  date: "November 3, 2026"
+},
+{
+  name: "GenAI Powered Data Analytics Job Simulation",
+  issuer: "Tata / Forage",
+  category: "Job Simulation",
+  description: "Exploratory data analysis, AI-based delinquency prediction and AI-driven collections strategy.",
+  file: "GenAI Powered Data Analytics Job Simulation.pdf",
+  date: "November 3, 2026"
+},
+{
+  name: "Web Development Internship",
+  issuer: "EWB Courses",
+  category: "Internship",
+  description: "Successfully completed a one-month JavaScript web development internship with a real-world project.",
+  file: "EWB_Certificate_Allen_Joseph_EWB-INT-2026-2395.pdf",
+  date: "October 31, 2026"
+}
+
   ];
 
   return (
@@ -1257,7 +1299,11 @@ function Certifications() {
             <div className="credential-issuer">
               {certificate.issuer}
             </div>
-
+            {certificate.date && (
+  <div className="credential-date">
+    {certificate.date}
+  </div>
+)}
             <a
               className="credential-view"
               href={`/certificates/${encodeURIComponent(
